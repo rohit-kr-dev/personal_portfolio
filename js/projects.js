@@ -387,10 +387,15 @@ function renderProjects(filter) {
         </div>
         
         <div class="project-actions" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px;">
-          ${p.demo && p.demo !== '#' && !p.demo.startsWith('#') ? `
-            <a href="${p.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="Launch Live Application">
+          ${p.demo && p.demo.startsWith('http') ? `
+            <a href="${p.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #10b981 0%, #0284c7 100%); font-weight: 700;" title="Launch Live Production App">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-              Live Demo 🚀
+              Live App 🚀
+            </a>
+          ` : p.demo && p.demo.startsWith('#') ? `
+            <a href="${p.demo}" class="btn btn-primary btn-sm" title="Explore Interactive Live Architecture & Engine">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Live Simulator ⚙️
             </a>
           ` : ''}
           <button class="btn btn-outline btn-sm" onclick="openProjectModal('${p.id}')">

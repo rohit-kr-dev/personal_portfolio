@@ -23,12 +23,12 @@ function initInteractiveTerminal() {
       <div style="color: var(--accent-cyan); margin-bottom: 6px; font-weight: 700;">⚡ Available Terminal Commands:</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">whoami</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Engineering profile &amp; positioning</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">resume</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1-click official PDF resume download</div>
-      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">github</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Production repos &amp; live deployments</div>
-      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">skills</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tiered skills (Strong / Working / Learning)</div>
+      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">cloud</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AWS infrastructure, Docker &amp; CI/CD</div>
+      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">skills</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tiered skills matrix (Core / Working / Learning)</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">projects</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Engineering case studies &amp; live apps</div>
-      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">architecture</span>&nbsp;&nbsp;- Polymetalz CRM architecture &amp; auth flow</div>
+      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">architecture</span>&nbsp;&nbsp;- Multi-tier system architecture diagrams</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">pricing</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 8-step credit pricing calculation engine</div>
-      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">learning</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Currently building expertise (AWS / DevOps / ML)</div>
+      <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">github</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Production repos &amp; live deployments</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">contact</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Direct email, WhatsApp, phone &amp; LinkedIn</div>
       <div>&nbsp;&nbsp;<span style="color: #38bdf8; font-weight: bold;">clear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Reset terminal window</div>
     `,
@@ -45,7 +45,7 @@ function initInteractiveTerminal() {
     whoami: () => `
       <div style="color: #f8fafc;">
         <span style="color: var(--accent-cyan); font-weight: bold; font-size: 1rem;">Rohit Kumar P Begur</span><br>
-        <span style="color: #38bdf8; font-weight: 600;">Software Engineer | Full-Stack &amp; Mobile Developer</span><br>
+        <span style="color: #38bdf8; font-weight: 600;">Software Engineer | Backend, Cloud &amp; Scalable Systems</span><br>
         💼 Software Developer @ Polymetalz Pvt. Ltd. (Sole Developer)<br>
         📍 Location: Bengaluru, India (Open to relocate &amp; remote)<br>
         🎓 Education: B.E. in Information Science — Yenepoya Institute of Technology (2021 – 2025)<br>
@@ -120,8 +120,21 @@ function initInteractiveTerminal() {
       <div>🔗 <span style="color: #38bdf8;">LinkedIn:</span> linkedin.com/in/rohit-kr-dev</div>
       <div>🐙 <span style="color: #38bdf8;">GitHub:</span> github.com/rohit-kr-dev</div>
     `,
+    cloud: () => `
+      <div style="color: var(--accent-cyan); font-weight: 700;">☁️ Cloud Infrastructure &amp; DevOps Implementations:</div>
+      <div>1. <span style="color: #38bdf8; font-weight: bold;">AWS Ecosystem:</span> EC2 Compute, S3 Storage, IAM Least-Privilege, VPC Networking, CloudWatch</div>
+      <div>2. <span style="color: #38bdf8; font-weight: bold;">Containerization:</span> Multi-stage Dockerfiles, Docker Compose multi-service orchestration</div>
+      <div>3. <span style="color: #38bdf8; font-weight: bold;">CI/CD Pipelines:</span> GitHub Actions automated testing, linting &amp; deployment triggers</div>
+      <div>4. <span style="color: #38bdf8; font-weight: bold;">Production Servers:</span> Linux (Ubuntu), Nginx reverse proxy, SSL/TLS Let's Encrypt, systemd</div>
+    `,
+    devops: () => `
+      <div style="color: var(--accent-cyan); font-weight: 700;">☁️ Cloud Infrastructure &amp; DevOps Implementations:</div>
+      <div>1. <span style="color: #38bdf8; font-weight: bold;">AWS Ecosystem:</span> EC2 Compute, S3 Storage, IAM Least-Privilege, VPC Networking, CloudWatch</div>
+      <div>2. <span style="color: #38bdf8; font-weight: bold;">Containerization:</span> Multi-stage Dockerfiles, Docker Compose multi-service orchestration</div>
+      <div>3. <span style="color: #38bdf8; font-weight: bold;">CI/CD Pipelines:</span> GitHub Actions automated testing, linting &amp; deployment triggers</div>
+      <div>4. <span style="color: #38bdf8; font-weight: bold;">Production Servers:</span> Linux (Ubuntu), Nginx reverse proxy, SSL/TLS Let's Encrypt, systemd</div>
+    `,
     hire: () => {
-      if (window.soundFX) window.soundFX.playChime();
       setTimeout(() => {
         const contactSection = document.getElementById('contact');
         if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -182,8 +195,6 @@ function initInteractiveTerminal() {
     stopMatrixMode();
     const input = rawInput.trim().toLowerCase();
     if (!input) return;
-
-    if (window.soundFX) window.soundFX.playClick();
 
     cmdHistory.push(rawInput);
     historyIndex = cmdHistory.length;

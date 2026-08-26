@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 function initTypingAnimation() {
   const phrases = [
-    "Software Engineer @ Polymetalz (Sole Developer)",
-    "Full-Stack & Backend Systems Developer",
-    "React.js & TypeScript Web Portals",
-    "Flutter Android Mobile Applications",
-    "20+ Production REST APIs in Python/Flask",
-    "PostgreSQL, Redis & Automated Workflows"
+    "Software Engineer | Backend, Cloud & Scalable Systems",
+    "Python (FastAPI / Flask) & PostgreSQL Architect",
+    "Redis Caching & High-Throughput Data Layers",
+    "AWS Infrastructure, Docker & CI/CD Pipelines",
+    "20+ Production REST APIs with RBAC & Phone-OTP",
+    "Sole Developer @ Polymetalz (CRM & Pricing Engine)"
   ];
   
   const textEl = document.querySelector('.typed-text');
@@ -62,7 +62,7 @@ function initTypingAnimation() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Theme Toggle (Dark / Light)
+   2. Theme Switcher (Dark / Light)
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
   const themeBtns = document.querySelectorAll('.theme-toggle-btn');
@@ -74,7 +74,6 @@ function initThemeToggle() {
 
   themeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (window.soundFX) window.soundFX.playClick();
       const current = html.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
