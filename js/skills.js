@@ -137,7 +137,6 @@ function initTierTabs() {
   const tabBtns = document.querySelectorAll('.skill-tab-btn');
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (window.soundFX) window.soundFX.playClick();
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeTierFilter = btn.getAttribute('data-skill-cat') || 'all';

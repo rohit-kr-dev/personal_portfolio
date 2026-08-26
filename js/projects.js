@@ -430,7 +430,6 @@ function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (window.soundFX) window.soundFX.playClick();
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter') || 'all';
@@ -448,7 +447,6 @@ function initModal() {
 
   if (modalClose && modalOverlay) {
     modalClose.addEventListener('click', () => {
-      if (window.soundFX) window.soundFX.playClick();
       modalOverlay.classList.remove('active');
       document.body.style.overflow = '';
     });
@@ -463,7 +461,6 @@ function initModal() {
 }
 
 window.openProjectModal = function(projectId) {
-  if (window.soundFX) window.soundFX.playStepChime();
   const project = projectsData.find(p => p.id === projectId);
   if (!project) return;
 

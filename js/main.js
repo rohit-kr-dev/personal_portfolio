@@ -1,11 +1,9 @@
 /**
- * Rohit Kumar Portfolio - Main Orchestrator (Elite Edition)
- * Spotlight Tracking, Live Clock, Sound FX Toggle & Theme Switcher
+ * Rohit Kumar Portfolio - Main Orchestrator
+ * Spotlight Tracking, Theme Switcher, Smooth Scrolling & Interactive Tilt
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLiveClock();
-  initAudioToggle();
   initTypingAnimation();
   initThemeToggle();
   initMobileDrawer();
@@ -15,58 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. Live Bengaluru Clock (IST)
-   -------------------------------------------------------------------------- */
-function initLiveClock() {
-  const clockEl = document.getElementById('live-time-ist');
-  if (!clockEl) return;
-
-  function updateTime() {
-    const options = {
-      timeZone: 'Asia/Kolkata',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    };
-    clockEl.textContent = new Intl.DateTimeFormat([], options).format(new Date());
-  }
-
-  updateTime();
-  setInterval(updateTime, 1000);
-}
-
-/* --------------------------------------------------------------------------
-   2. Web Audio FX Button Toggle
-   -------------------------------------------------------------------------- */
-function initAudioToggle() {
-  const audioBtn = document.getElementById('audio-toggle-btn');
-  if (!audioBtn) return;
-
-  audioBtn.addEventListener('click', () => {
-    if (window.soundFX) {
-      const isEnabled = window.soundFX.toggle();
-      audioBtn.classList.toggle('active', isEnabled);
-      audioBtn.title = `Sound FX: ${isEnabled ? 'ON 🔊' : 'OFF 🔇'}`;
-      audioBtn.style.color = isEnabled ? 'var(--accent-cyan)' : 'var(--text-muted)';
-      audioBtn.style.borderColor = isEnabled ? 'var(--accent-cyan)' : 'var(--border-subtle)';
-      if (isEnabled && window.showToast) {
-        window.showToast('🔊 Sound FX Enabled (Spatial Cyber Blips)');
-      }
-    }
-  });
-
-  // Attach hover sounds to interactive elements
-  const interactives = document.querySelectorAll('a, button, .quick-cmd-btn, .skill-pill, .roadmap-checkpoint-node, .arch-node');
-  interactives.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (window.soundFX) window.soundFX.playHover();
-    });
-  });
-}
-
-/* --------------------------------------------------------------------------
-   3. Dynamic Typing Hero
+   1. Dynamic Typing Hero
    -------------------------------------------------------------------------- */
 function initTypingAnimation() {
   const phrases = [
