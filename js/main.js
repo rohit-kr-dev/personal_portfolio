@@ -70,12 +70,12 @@ function initAudioToggle() {
    -------------------------------------------------------------------------- */
 function initTypingAnimation() {
   const phrases = [
-    "Full-Stack Developer @ Polymetalz",
-    "Python / FastAPI / Flask Architect",
-    "React.js & Next.js Frontend Engineer",
-    "Flutter Android Mobile Creator",
-    "PostgreSQL, Redis & Cloud Specialist",
-    "AI/ML & NLP Pipeline Builder"
+    "Software Engineer @ Polymetalz (Sole Developer)",
+    "Full-Stack & Backend Systems Developer",
+    "React.js & TypeScript Web Portals",
+    "Flutter Android Mobile Applications",
+    "20+ Production REST APIs in Python/Flask",
+    "PostgreSQL, Redis & Automated Workflows"
   ];
   
   const textEl = document.querySelector('.typed-text');

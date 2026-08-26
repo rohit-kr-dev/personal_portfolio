@@ -1,125 +1,111 @@
 /**
- * Rohit Kumar - Skills Matrix Module
- * Organized Tech Stack Categories, Tab Filtering & Real-World Production Notes
+ * Rohit Kumar - Skills Matrix & Expertise Tiers
+ * Honest, Defensible Categorization: Strong (Production Proven), Working Knowledge, and Currently Building Expertise
  */
 
-const skillsData = [
+const skillTiersData = [
   {
-    category: 'frontend',
-    categoryName: 'Frontend & Mobile',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+    tierId: 'strong',
+    tierName: 'Core Strengths (Production Proven)',
+    badge: 'High Proficiency',
+    badgeColor: '#22c55e',
+    desc: 'Technologies used daily in commercial production to build scalable systems, APIs, mobile apps, and databases.',
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
     skills: [
-      { name: 'React.js', note: 'Component architecture, Hooks, Context' },
-      { name: 'Next.js', note: 'SSR, SEO Optimization, API Routes' },
-      { name: 'Flutter (Dart)', note: 'Cross-platform Android CRM production app' },
-      { name: 'TypeScript', note: 'Strongly typed interfaces & contracts' },
-      { name: 'JavaScript (ES6+)', note: 'Async/Await, DOM manipulation, APIs' },
-      { name: 'Tailwind CSS', note: 'Utility-first responsive layouts' },
-      { name: 'HTML5 & CSS3', note: 'Semantic markup, Flexbox/Grid, Glassmorphism' }
+      { name: 'Python', context: 'Primary backend language for business logic, algorithms & APIs' },
+      { name: 'Flask', context: 'Built & maintained 20+ production REST APIs at Polymetalz' },
+      { name: 'Flutter / Dart', context: 'Developed cross-platform Android CRM production application' },
+      { name: 'JavaScript / TypeScript', context: 'Engineered web portals, typed contracts & frontend state' },
+      { name: 'React.js', context: 'Component architecture, responsive admin dashboards & state hooks' },
+      { name: 'REST APIs Architecture', context: 'Stateless endpoints, token authentication, error contracts' },
+      { name: 'PostgreSQL', context: 'Relational schema design, normalization, ACID transactions' }
     ]
   },
   {
-    category: 'backend',
-    categoryName: 'Backend & APIs',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
+    tierId: 'working',
+    tierName: 'Working Knowledge (Production & Projects)',
+    badge: 'Applied Knowledge',
+    badgeColor: '#38bdf8',
+    desc: 'Tools and platforms actively utilized in projects, server provisioning, caching layers, and integrations.',
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
     skills: [
-      { name: 'Python', note: 'Primary backend language for APIs & algorithms' },
-      { name: 'FastAPI', note: 'High-throughput async microservices & Swagger' },
-      { name: 'Flask', note: 'Built 20+ production REST APIs at Polymetalz' },
-      { name: 'REST APIs Architecture', note: 'Stateless endpoints, standard HTTP status' },
-      { name: 'JWT & Phone-OTP Auth', note: 'Zero-trust role-based security' },
-      { name: 'Node.js', note: 'Microservices & runtime automation' },
-      { name: 'Pydantic & SQLAlchemy', note: 'Data validation and ORM queries' }
+      { name: 'Redis', context: 'In-memory session caching and fast state lookup' },
+      { name: 'Firebase (Firestore / Auth)', context: 'Real-time document storage & mobile sync' },
+      { name: 'Docker', context: 'Containerization, Dockerfile configuration & container workflows' },
+      { name: 'AWS (EC2 / S3)', context: 'Instance provisioning, security groups, static assets' },
+      { name: 'n8n Automation', context: 'Automated pricing triggers & webhook workflows' },
+      { name: 'Git & GitHub', context: 'Version control, branch workflows, pull requests' },
+      { name: 'SQL & Database Design', context: 'Complex queries, indexes & relational joins' },
+      { name: 'HTML5 & CSS3', context: 'Responsive layouts, Flexbox/Grid, accessible UI' }
     ]
   },
   {
-    category: 'databases',
-    categoryName: 'Databases & Caching',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+    tierId: 'learning',
+    tierName: 'Currently Building Expertise (Active Focus)',
+    badge: 'In Progress',
+    badgeColor: '#f59e0b',
+    desc: 'Actively studying and building hands-on projects to expand cloud architecture and intelligent system capabilities.',
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
     skills: [
-      { name: 'PostgreSQL', note: 'Relational data modeling, indexing, ACID transactions' },
-      { name: 'MySQL', note: 'Schema design & normalization' },
-      { name: 'Redis', note: 'In-memory session cache & fast state lookups' },
-      { name: 'Firebase Firestore', note: 'Real-time document storage & security rules' },
-      { name: 'Firebase Realtime DB', note: 'Live bidirectional sync for mobile app' }
-    ]
-  },
-  {
-    category: 'aiml',
-    categoryName: 'AI / ML & Automation',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',
-    skills: [
-      { name: 'Natural Language Processing (NLP)', note: 'Cosine similarity, entity extraction, ranking' },
-      { name: 'OCR (Tesseract)', note: 'Automated resume & document scanning pipeline' },
-      { name: 'Pandas & NumPy', note: 'Data preprocessing, cleaning & analytics' },
-      { name: 'n8n Workflow Automation', note: 'Automated pricing triggers & notifications' },
-      { name: 'OpenAI APIs Integration', note: 'Prompt engineering & streaming completions' }
-    ]
-  },
-  {
-    category: 'cloud',
-    categoryName: 'Cloud & DevOps',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
-    skills: [
-      { name: 'Docker', note: 'Multi-stage containerization & Docker Compose' },
-      { name: 'AWS EC2 & S3', note: 'Server provisioning, storage, IAM roles' },
-      { name: 'Firebase Hosting & Netlify', note: 'Production static & SPA web hosting' },
-      { name: 'CI/CD Pipelines', note: 'Automated test & deployment integration' },
-      { name: 'Linux / Bash', note: 'Server configuration & shell scripting' }
-    ]
-  },
-  {
-    category: 'tools',
-    categoryName: 'Tools & Practices',
-    icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
-    skills: [
-      { name: 'Git & GitHub', note: 'Branching, PRs, code reviews' },
-      { name: 'Postman', note: 'API testing, collection mockups & verification' },
-      { name: 'Power BI & Tableau', note: 'Interactive analytics dashboards' },
-      { name: 'Agile / Scrum', note: 'Sprint planning & feature delivery' },
-      { name: 'Full SDLC Management', note: 'End-to-end software ownership' }
+      { name: 'AWS Solutions Architecture', context: 'High availability, VPCs, IAM policies & cloud patterns' },
+      { name: 'DevOps & CI/CD Pipelines', context: 'Automated testing, GitHub Actions & build pipelines' },
+      { name: 'Machine Learning & NLP', context: 'Document parsing, cosine similarity scoring & Spacy' },
+      { name: 'LLMs & Prompt Engineering', context: 'OpenAI API integration & generative workflows' },
+      { name: 'Meta WhatsApp Cloud API', context: 'Webhook listener engines & automated business messaging' }
     ]
   }
 ];
 
-let activeSkillCategory = 'all';
+let activeTierFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderSkills();
-  initSkillTabs();
-  initSkillsSearch();
+  renderSkillTiers();
+  initTierTabs();
+  initTierSearch();
 });
 
-function renderSkills(searchTerm = '') {
+function renderSkillTiers(searchTerm = '') {
   const container = document.getElementById('skills-container');
   if (!container) return;
 
   const term = searchTerm.toLowerCase().trim();
 
-  const filteredCategories = activeSkillCategory === 'all'
-    ? skillsData
-    : skillsData.filter(c => c.category === activeSkillCategory);
+  const filteredTiers = activeTierFilter === 'all'
+    ? skillTiersData
+    : skillTiersData.filter(t => t.tierId === activeTierFilter);
 
-  container.innerHTML = filteredCategories.map(cat => {
-    const matchingSkills = cat.skills.filter(s => 
-      !term || s.name.toLowerCase().includes(term) || s.note.toLowerCase().includes(term) || cat.categoryName.toLowerCase().includes(term)
+  container.innerHTML = filteredTiers.map(tier => {
+    const matchingSkills = tier.skills.filter(s =>
+      !term || s.name.toLowerCase().includes(term) || s.context.toLowerCase().includes(term) || tier.tierName.toLowerCase().includes(term)
     );
 
     if (term && matchingSkills.length === 0) return '';
 
     return `
-      <div class="skill-category-card reveal">
-        <div class="skill-category-header">
-          <div class="skill-cat-icon">
-            ${cat.icon}
+      <div class="skill-tier-card spotlight-card reveal" style="border-top: 3px solid ${tier.badgeColor};">
+        <div class="skill-tier-header">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="skill-tier-icon" style="color: ${tier.badgeColor};">
+              ${tier.icon}
+            </div>
+            <div>
+              <h3 class="skill-tier-title">${tier.tierName}</h3>
+              <p class="skill-tier-desc">${tier.desc}</p>
+            </div>
           </div>
-          <h3 class="skill-cat-title">${cat.categoryName}</h3>
+          <span class="skill-tier-badge" style="color: ${tier.badgeColor}; background: ${tier.badgeColor}18; border-color: ${tier.badgeColor}40;">
+            ${tier.badge}
+          </span>
         </div>
-        <div class="skill-pills-wrap">
+
+        <div class="skill-tier-grid">
           ${matchingSkills.map(skill => `
-            <div class="skill-pill" title="${skill.note}">
-              <span class="pill-dot"></span>
-              <span>${skill.name}</span>
+            <div class="skill-item-box" title="${skill.context}">
+              <div class="skill-item-name">
+                <span class="skill-dot" style="background: ${tier.badgeColor};"></span>
+                <strong>${skill.name}</strong>
+              </div>
+              <div class="skill-item-context">${skill.context}</div>
             </div>
           `).join('')}
         </div>
@@ -127,6 +113,7 @@ function renderSkills(searchTerm = '') {
     `;
   }).filter(Boolean).join('');
 
+  // Re-observe scroll animations and spotlight effects
   const reveals = container.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -134,25 +121,36 @@ function renderSkills(searchTerm = '') {
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
-}
 
-function initSkillTabs() {
-  const tabBtns = document.querySelectorAll('.skill-tab-btn');
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeSkillCategory = btn.getAttribute('data-skill-cat') || 'all';
-      renderSkills(document.getElementById('skills-search')?.value || '');
+  container.querySelectorAll('.spotlight-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
 }
 
-function initSkillsSearch() {
+function initTierTabs() {
+  const tabBtns = document.querySelectorAll('.skill-tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.soundFX) window.soundFX.playClick();
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTierFilter = btn.getAttribute('data-skill-cat') || 'all';
+      renderSkillTiers(document.getElementById('skills-search')?.value || '');
+    });
+  });
+}
+
+function initTierSearch() {
   const searchInput = document.getElementById('skills-search');
   if (!searchInput) return;
 
   searchInput.addEventListener('input', (e) => {
-    renderSkills(e.target.value);
+    renderSkillTiers(e.target.value);
   });
 }
