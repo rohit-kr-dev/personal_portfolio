@@ -100,6 +100,37 @@ html {
   color-scheme: dark;
 }
 
+/* Custom Selection Highlight */
+::selection {
+  background: rgba(0, 240, 255, 0.35);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 240, 255, 0.35);
+  color: #ffffff;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
@@ -216,6 +247,12 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
+/* Interactive Focus States */
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -230,6 +267,12 @@ button {
   transition: all var(--transition-normal);
   border: 1px solid transparent;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
